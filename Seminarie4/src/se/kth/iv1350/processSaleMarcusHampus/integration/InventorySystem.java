@@ -44,39 +44,36 @@ public class InventorySystem {
      * @param itemIdentifier A string representing the unique identifier of the item
      * @return New instance of item if found; null if no item matches the identifier
      */
-    public Item fetchItem(String itemIdentifier) {
+    public Item fetchItem(String itemIdentifier) throws ItemNotFoundException {
         for (Item item : inventory) {
             if (itemIdentifier.equals(item.getItemIdentifier())) {
                 return new Item(item);
             }
         }
-        return null;
+        throw new ItemNotFoundException(itemIdentifier);
     }
 
-    /**
+        /**
      * Updates the inventory based on items sold in a completed sale.
      * It decreases the stock quantity of each sold item.
      *
      * @param saleInformation The saleInformation containing the list of items that have been sold
      */
-    public void updateInventorySystem(SaleDTO saleinformation) {
-        ArrayList<Item> soldItems = saleinformation.getItems();
+    public void updateInventorySystem(SaleDTO saleInformation) {
+        ArrayList<Item> soldItems = saleInformation.getItems();
 
         for (Item soldItem : soldItems) {
             String itemIdentifier = soldItem.getItemIdentifier();
             Amount quantitySold = soldItem.getQuantity();
 
-            Item inventoryItem = fetchItem(itemIdentifier);
-            if (inventoryItem != null) {
-                Amount updatedQuantity = inventoryItem.getQuantity().minus(quantitySold);
-
-                for (Item item : inventory) {
-                    if (itemIdentifier.equals(item.getItemIdentifier())) {
-                        item.setQuantity(updatedQuantity);
-                        break;
-                    }
+            for (Item inventoryItem : inventory) {
+                if (itemIdentifier.equals(inventoryItem.getItemIdentifier())) {
+                    Amount updatedQuantity = inventoryItem.getQuantity().minus(quantitySold);
+                    inventoryItem.setQuantity(updatedQuantity);
+                    break;
                 }
             }
         }
     }
 }
+
