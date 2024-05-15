@@ -4,6 +4,7 @@ import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
 import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
+import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
 import se.kth.iv1350.processSaleMarcusHampus.view.View;
 
 /**
@@ -23,7 +24,8 @@ public class Main {
         AccountingSystem accountingSystem = new AccountingSystem();
         InventorySystem inventorySystem = new InventorySystem();
         Printer printer = new Printer();
-        Controller controller = new Controller(accountingSystem, inventorySystem, printer);
+        FileLogger logger = new FileLogger();
+        Controller controller = new Controller(accountingSystem, inventorySystem, printer, logger);
         View view = new View(controller);
         view.fakeSale();
     }

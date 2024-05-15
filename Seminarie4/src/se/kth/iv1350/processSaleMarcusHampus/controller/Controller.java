@@ -1,6 +1,7 @@
 package se.kth.iv1350.processSaleMarcusHampus.controller;
 
 import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
+import se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
 import se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException;
@@ -35,11 +36,11 @@ public class Controller {
      *                         stock updates
      * @param printer          the printer used for printing receipts
      */
-    public Controller(AccountingSystem accountingSystem, InventorySystem inventorySystem, Printer printer) {
+    public Controller(AccountingSystem accountingSystem, InventorySystem inventorySystem, Printer printer, FileLogger logger) {
         this.accountingSystem = accountingSystem;
         this.inventorySystem = inventorySystem;
         this.printer = printer;
-        this.logger = new FileLogger();
+        this.logger = logger;
     }
 
     /**
@@ -65,7 +66,10 @@ public class Controller {
             String itemDetails = itemToBeAdded.generateItemDetails();
             return itemDetails;
         } catch (ItemNotFoundException e) {
-            logger.log(e.getMessage());
+            logger.error("Item not found: " + itemIdentifier, e);
+            return e.getMessage();
+        } catch (DatabaseConnectionException e) {
+            logger.error("Failed to connect to database.", e);
             return e.getMessage();
         }
     }

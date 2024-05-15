@@ -44,7 +44,11 @@ public class InventorySystem {
      * @param itemIdentifier A string representing the unique identifier of the item
      * @return New instance of item if found; null if no item matches the identifier
      */
-    public Item fetchItem(String itemIdentifier) throws ItemNotFoundException {
+    public Item fetchItem(String itemIdentifier) throws ItemNotFoundException, DatabaseConnectionException {
+        if ("00000".equals(itemIdentifier)) {
+            throw new DatabaseConnectionException("The database server could not be reached");
+        }
+
         for (Item item : inventory) {
             if (itemIdentifier.equals(item.getItemIdentifier())) {
                 return new Item(item);
@@ -53,11 +57,12 @@ public class InventorySystem {
         throw new ItemNotFoundException(itemIdentifier);
     }
 
-        /**
+    /**
      * Updates the inventory based on items sold in a completed sale.
      * It decreases the stock quantity of each sold item.
      *
-     * @param saleInformation The saleInformation containing the list of items that have been sold
+     * @param saleInformation The saleInformation containing the list of items that
+     *                        have been sold
      */
     public void updateInventorySystem(SaleDTO saleInformation) {
         ArrayList<Item> soldItems = saleInformation.getItems();
@@ -76,4 +81,3 @@ public class InventorySystem {
         }
     }
 }
-
