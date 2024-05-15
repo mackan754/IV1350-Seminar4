@@ -6,7 +6,7 @@ import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
  * Represents the data transfer object for an item. This class is designed to encapsulate and transfer the data
  * pertaining to an item, including its name, description, price, and the tax amount applicable to it.
  */
-public class ItemDetails {
+public class ItemDTO {
 
     private final String itemName;          
     private final String itemDescription;   
@@ -21,7 +21,7 @@ public class ItemDetails {
      * @param itemPrice The price at which the item is sold
      * @param itemTaxAmount The tax amount applied to the item
      */
-    public ItemDetails(String itemName, String itemDescription, Amount itemPrice, Amount itemTaxAmount) {
+    public ItemDTO(String itemName, String itemDescription, Amount itemPrice, Amount itemTaxAmount) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemPrice = itemPrice;
@@ -33,7 +33,7 @@ public class ItemDetails {
      * 
      * @param itemInformation The ItemDTO to create a new instance of.
      */
-    public ItemDetails(ItemDetails itemInformation) {
+    public ItemDTO(ItemDTO itemInformation) {
         this.itemName = itemInformation.itemName;
         this.itemDescription = itemInformation.itemDescription;
         this.itemPrice = new Amount(itemInformation.itemPrice.getAmount()); 

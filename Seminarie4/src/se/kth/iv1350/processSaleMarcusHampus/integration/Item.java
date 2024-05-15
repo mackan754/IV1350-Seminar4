@@ -9,7 +9,7 @@ import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 public class Item {
 
     private String itemIdentifier;      
-    private ItemDetails itemInformation;    
+    private ItemDTO itemInformation;    
     private Amount quantity;            
 
     /**
@@ -19,7 +19,7 @@ public class Item {
      * @param itemDescription Detailed information about the item including its price and category
      * @param quantity The initial quantity of the item
      */
-    public Item(String itemIdentifier, ItemDetails itemDescription, Amount quantity) {
+    public Item(String itemIdentifier, ItemDTO itemDescription, Amount quantity) {
         this.itemIdentifier = itemIdentifier;
         this.itemInformation = itemDescription;
         this.quantity = quantity;
@@ -31,7 +31,7 @@ public class Item {
      */
     public Item(Item item) {
         this.itemIdentifier = item.itemIdentifier;
-        this.itemInformation = new ItemDetails(item.itemInformation);
+        this.itemInformation = new ItemDTO(item.itemInformation);
         this.quantity = new Amount(item.quantity.getAmount());
     }
 
@@ -49,7 +49,7 @@ public class Item {
      *
      * @return An instance of ItemDTO containing details such as name, price, and tax
      */
-    public ItemDetails getItemInformation() {
+    public ItemDTO getItemInformation() {
         return itemInformation;
     }
 

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
-import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDetails;
+import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDTO;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 
 public class ItemTest {
@@ -17,7 +17,7 @@ public class ItemTest {
     @BeforeEach
     public void setUp() {
         String itemIdentifier = "12345";
-        ItemDetails itemInformation = new ItemDetails("Test Item", "This is a test item", new Amount(50), new Amount(5));
+        ItemDTO itemInformation = new ItemDTO("Test Item", "This is a test item", new Amount(50), new Amount(5));
         Amount quantity = new Amount(2);
         item = new Item(itemIdentifier, itemInformation, quantity);
     }
@@ -35,7 +35,7 @@ public class ItemTest {
 
     @Test
     public void getItemInformation() {
-        ItemDetails expectedItemInformation = new ItemDetails("Test Item", "This is a test item", new Amount(50), new Amount(5));
+        ItemDTO expectedItemInformation = new ItemDTO("Test Item", "This is a test item", new Amount(50), new Amount(5));
         assertEquals(expectedItemInformation.getItemName(), item.getItemInformation().getItemName(), "Item name should match the expected value.");
         assertEquals(expectedItemInformation.getItemDescription(), item.getItemInformation().getItemDescription(), "Item description should match the expected value.");
         assertEquals(expectedItemInformation.getItemPrice().getAmount(), item.getItemInformation().getItemPrice().getAmount(), "Item price should match the expected value.");

@@ -6,12 +6,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDetails;
+import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDTO;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 
 public class ItemDTOTest {
 
-    private ItemDetails itemDTO;
+    private ItemDTO itemDTO;
 
     @BeforeEach
     public void setUp() {
@@ -19,7 +19,7 @@ public class ItemDTOTest {
         String itemDescription = "This is a test item";
         Amount itemPrice = new Amount(50);
         Amount itemTaxAmount = new Amount(5);
-        itemDTO = new ItemDetails(itemName, itemDescription, itemPrice, itemTaxAmount);
+        itemDTO = new ItemDTO(itemName, itemDescription, itemPrice, itemTaxAmount);
     }
 
     @AfterEach

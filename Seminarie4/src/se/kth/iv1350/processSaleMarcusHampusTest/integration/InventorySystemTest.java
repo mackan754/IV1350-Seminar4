@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
-import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDetails;
+import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDTO;
 import se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException;
 import se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException;
 import se.kth.iv1350.processSaleMarcusHampus.model.Sale;
@@ -26,10 +26,10 @@ public class InventorySystemTest {
     public void setUp() {
         inventorySystem = new InventorySystem();
         sale = new Sale();
-        ItemDetails milkDTO = new ItemDetails("Milk", "Dairy", new Amount(12), new Amount(2));
-        ItemDetails bananaDTO = new ItemDetails("Banana", "Fruit", new Amount(5), new Amount(1));
-        ItemDetails icecreamDTO = new ItemDetails("Icecream", "Frozen", new Amount(49), new Amount(6));
-        ItemDetails pastaDTO = new ItemDetails("Pasta", "Dry goods", new Amount(15), new Amount(3));
+        ItemDTO milkDTO = new ItemDTO("Milk", "Dairy", new Amount(12), new Amount(2));
+        ItemDTO bananaDTO = new ItemDTO("Banana", "Fruit", new Amount(5), new Amount(1));
+        ItemDTO icecreamDTO = new ItemDTO("Icecream", "Frozen", new Amount(49), new Amount(6));
+        ItemDTO pastaDTO = new ItemDTO("Pasta", "Dry goods", new Amount(15), new Amount(3));
         sale.addItem(new Item("32001", milkDTO, new Amount(0)), new Amount(5));
         sale.addItem(new Item("32002", bananaDTO, new Amount(0)), new Amount(3));
         sale.addItem(new Item("32003", icecreamDTO, new Amount(0)), new Amount(2));

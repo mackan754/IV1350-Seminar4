@@ -3,7 +3,7 @@ package se.kth.iv1350.processSaleMarcusHampusTest.model;
 import org.junit.Before;
 import org.junit.Test;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
-import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDetails;
+import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDTO;
 import se.kth.iv1350.processSaleMarcusHampus.model.Sale;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 
@@ -15,14 +15,14 @@ import static org.junit.Assert.assertEquals;
 public class SaleTest {
 
     private Sale sale;
-    private ItemDetails itemDTO1;
-    private ItemDetails itemDTO2;
+    private ItemDTO itemDTO1;
+    private ItemDTO itemDTO2;
 
     @Before
     public void setUp() {
         sale = new Sale();
-        itemDTO1 = new ItemDetails("Apple", "Fresh apple", new Amount(10), new Amount(2));
-        itemDTO2 = new ItemDetails("Banana", "Fresh banana", new Amount(15), new Amount(3));
+        itemDTO1 = new ItemDTO("Apple", "Fresh apple", new Amount(10), new Amount(2));
+        itemDTO2 = new ItemDTO("Banana", "Fresh banana", new Amount(15), new Amount(3));
     }
 
     @Test
