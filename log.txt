@@ -2,3 +2,11 @@
 2024-05-15 16:37:54 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
 2024-05-15 16:37:54 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
 2024-05-15 16:37:54 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-15 16:48:32 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-15 16:48:32 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-15 16:48:32 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-15 16:48:32 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-15 19:13:41 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-15 19:13:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-15 19:13:41 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-15 19:13:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached

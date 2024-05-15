@@ -8,12 +8,14 @@ import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
 import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
+import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
 import se.kth.iv1350.processSaleMarcusHampus.view.View;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class ViewTest {
 
@@ -23,7 +25,7 @@ public class ViewTest {
 
     @BeforeEach
     public void setUp() {
-        Controller contr = new Controller(new AccountingSystem(), new InventorySystem(), new Printer());
+        Controller contr = new Controller(new AccountingSystem(), new InventorySystem(), new Printer(), new FileLogger(), new ArrayList<>());
         instanceToTest = new View(contr);
 
         printoutBuffer = new ByteArrayOutputStream();

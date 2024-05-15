@@ -1,7 +1,7 @@
 package se.kth.iv1350.processSaleMarcusHampusTest.integration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
 import se.kth.iv1350.processSaleMarcusHampus.integration.ItemDetails;
+import se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException;
+import se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException;
 import se.kth.iv1350.processSaleMarcusHampus.model.Sale;
 import se.kth.iv1350.processSaleMarcusHampus.model.SaleDTO;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
@@ -42,7 +44,7 @@ public class InventorySystemTest {
     }
 
     @Test
-    public void testFetchItem() {
+    public void testFetchItem() throws ItemNotFoundException, DatabaseConnectionException {
         String itemIdentifier = "32001";
         Item fetchedItem = inventorySystem.fetchItem(itemIdentifier);
         assertEquals(itemIdentifier, fetchedItem.getItemIdentifier(),
@@ -52,13 +54,21 @@ public class InventorySystemTest {
     @Test
     public void testFetchItemNotFound() {
         String itemIdentifier = "99999";
-        Item fetchedItem = inventorySystem.fetchItem(itemIdentifier);
-        assertNull(fetchedItem, "No item should be fetched for a non-existing identifier.");
+        assertThrows(ItemNotFoundException.class, () -> {
+            inventorySystem.fetchItem(itemIdentifier);
+        }, "Expected ItemNotFoundException for non-existing identifier.");
     }
 
     @Test
-    public void testUpdateInventorySystem() {
-        
+    public void testFetchItemDatabaseConnectionException() {
+        String itemIdentifier = "00000";
+        assertThrows(DatabaseConnectionException.class, () -> {
+            inventorySystem.fetchItem(itemIdentifier);
+        }, "Expected DatabaseConnectionException for database connection issue.");
+    }
+
+    @Test
+    public void testUpdateInventorySystem() throws ItemNotFoundException, DatabaseConnectionException {
         inventorySystem.updateInventorySystem(saleInformation);
 
         assertEquals(5, inventorySystem.fetchItem("32001").getQuantity().getAmount(),
@@ -69,6 +79,5 @@ public class InventorySystemTest {
                 "Quantity of fetched item should be updated after sale.");
         assertEquals(6, inventorySystem.fetchItem("32004").getQuantity().getAmount(),
                 "Quantity of fetched item should be updated after sale.");
-
     }
 }
