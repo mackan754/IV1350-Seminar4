@@ -27,10 +27,10 @@ public class InventorySystem {
      * This method simulates an initial inventory load.
      */
     private void addFakeInventory() {
-        ItemDTO milkDTO = new ItemDTO("Milk", "Dairy", new Amount(12), new Amount(2));
-        ItemDTO bananaDTO = new ItemDTO("Banana", "Fruit", new Amount(5), new Amount(1));
-        ItemDTO icecreamDTO = new ItemDTO("Icecream", "Frozen", new Amount(49), new Amount(6));
-        ItemDTO pastaDTO = new ItemDTO("Pasta", "Dry goods", new Amount(15), new Amount(3));
+        ItemDetails milkDTO = new ItemDetails("Milk", "Dairy", new Amount(12), new Amount(2));
+        ItemDetails bananaDTO = new ItemDetails("Banana", "Fruit", new Amount(5), new Amount(1));
+        ItemDetails icecreamDTO = new ItemDetails("Icecream", "Frozen", new Amount(49), new Amount(6));
+        ItemDetails pastaDTO = new ItemDetails("Pasta", "Dry goods", new Amount(15), new Amount(3));
 
         inventory.add(new Item("32001", milkDTO, new Amount(10)));
         inventory.add(new Item("32002", bananaDTO, new Amount(10)));
