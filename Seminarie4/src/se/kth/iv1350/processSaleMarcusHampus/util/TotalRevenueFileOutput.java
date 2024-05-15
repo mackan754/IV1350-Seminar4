@@ -3,12 +3,15 @@ package se.kth.iv1350.processSaleMarcusHampus.util;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Outputs the total revenue to a file.
  */
 public class TotalRevenueFileOutput implements TotalRevenueObserver {
     private PrintWriter logStream;
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public TotalRevenueFileOutput() {
         try {
@@ -20,8 +23,10 @@ public class TotalRevenueFileOutput implements TotalRevenueObserver {
     }
 
     @Override
-    public void updateTotalRevenue(int totalRevenue) {
-        logStream.println("Total Revenue: " + totalRevenue);
+    public void updateTotalRevenue(Amount totalRevenue) {
+        String timestamp = LocalDateTime.now().format(DATE_TIME_FORMATTER);
+        logStream.println(timestamp + "Total Revenue: " + totalRevenue.getAmount());
     }
 }
+
 

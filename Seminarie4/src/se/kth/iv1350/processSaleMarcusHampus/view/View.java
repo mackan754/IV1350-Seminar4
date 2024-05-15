@@ -37,6 +37,14 @@ public class View {
         System.out.println(output);
         System.out.println("Running total: " + contr.displayTotal());
         System.out.println();
+        output = contr.addItem("99999", new Amount(1));
+        System.out.println(output);
+        System.out.println("Running total: " + contr.displayTotal());
+        System.out.println();
+        output = contr.addItem("00000", new Amount(1));
+        System.out.println(output);
+        System.out.println("Running total: " + contr.displayTotal());
+        System.out.println();
         output = contr.addItem("32004", new Amount(3));
         System.out.println(output);
         System.out.println("Running total: " + contr.displayTotal());

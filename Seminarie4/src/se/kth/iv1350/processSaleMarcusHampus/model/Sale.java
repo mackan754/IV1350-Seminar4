@@ -3,6 +3,7 @@ package se.kth.iv1350.processSaleMarcusHampus.model;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
 import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 
@@ -134,7 +135,6 @@ public class Sale {
      */
     public Amount completeSale(Amount payment) {
         Amount change = payment.minus(getTotalIncludingTax());
-
         return change;
     }
 }

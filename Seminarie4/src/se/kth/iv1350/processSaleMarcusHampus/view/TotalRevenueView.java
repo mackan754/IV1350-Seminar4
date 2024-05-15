@@ -1,5 +1,6 @@
 package se.kth.iv1350.processSaleMarcusHampus.view;
 
+import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
 
 /**
@@ -7,7 +8,7 @@ import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
  */
 public class TotalRevenueView implements TotalRevenueObserver {
     @Override
-    public void updateTotalRevenue(int totalRevenue) {
-        System.out.println("Total Revenue: " + totalRevenue);
+    public void updateTotalRevenue(Amount totalRevenue) {
+        System.out.println("Total Revenue: " + totalRevenue.getAmount());
     }
 }

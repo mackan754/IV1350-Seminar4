@@ -1,10 +1,15 @@
 package se.kth.iv1350.processSaleMarcusHampus.startup;
 
+import java.util.ArrayList;
+
 import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
 import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
 import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
+import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueFileOutput;
+import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
+import se.kth.iv1350.processSaleMarcusHampus.view.TotalRevenueView;
 import se.kth.iv1350.processSaleMarcusHampus.view.View;
 
 /**
@@ -25,8 +30,14 @@ public class Main {
         InventorySystem inventorySystem = new InventorySystem();
         Printer printer = new Printer();
         FileLogger logger = new FileLogger();
-        Controller controller = new Controller(accountingSystem, inventorySystem, printer, logger);
+
+        ArrayList<TotalRevenueObserver> revenueObservers = new ArrayList<>();
+        revenueObservers.add(new TotalRevenueView());
+        revenueObservers.add(new TotalRevenueFileOutput());
+
+        Controller controller = new Controller(accountingSystem, inventorySystem, printer, logger, revenueObservers);
         View view = new View(controller);
+        view.fakeSale();
         view.fakeSale();
     }
 }

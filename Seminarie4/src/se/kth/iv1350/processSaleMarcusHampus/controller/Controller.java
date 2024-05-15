@@ -1,5 +1,7 @@
 package se.kth.iv1350.processSaleMarcusHampus.controller;
 
+import java.util.ArrayList;
+
 import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
@@ -12,6 +14,7 @@ import se.kth.iv1350.processSaleMarcusHampus.model.SaleDTO;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
 import se.kth.iv1350.processSaleMarcusHampus.util.Logger;
+import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
 
 /**
  * The Controller class acts as the central part of the application,
@@ -36,11 +39,12 @@ public class Controller {
      *                         stock updates
      * @param printer          the printer used for printing receipts
      */
-    public Controller(AccountingSystem accountingSystem, InventorySystem inventorySystem, Printer printer, FileLogger logger) {
+    public Controller(AccountingSystem accountingSystem, InventorySystem inventorySystem, Printer printer, FileLogger logger,ArrayList<TotalRevenueObserver> revenueObservers) {
         this.accountingSystem = accountingSystem;
         this.inventorySystem = inventorySystem;
         this.printer = printer;
         this.logger = logger;
+        accountingSystem.addObservers(revenueObservers);
     }
 
     /**

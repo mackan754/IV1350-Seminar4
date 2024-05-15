@@ -1,12 +1,4 @@
-2024-05-15 14:26:33 [ERROR] Failed to connect to database.
-se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-	at se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem.fetchItem(InventorySystem.java:49)
-	at se.kth.iv1350.processSaleMarcusHampus.controller.Controller.addItem(Controller.java:64)
-	at se.kth.iv1350.processSaleMarcusHampus.view.View.fakeSale(View.java:32)
-	at se.kth.iv1350.processSaleMarcusHampus.startup.Main.main(Main.java:30)
-2024-05-15 14:26:46 [ERROR] Item not found: 99999
-se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-	at se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem.fetchItem(InventorySystem.java:57)
-	at se.kth.iv1350.processSaleMarcusHampus.controller.Controller.addItem(Controller.java:64)
-	at se.kth.iv1350.processSaleMarcusHampus.view.View.fakeSale(View.java:32)
-	at se.kth.iv1350.processSaleMarcusHampus.startup.Main.main(Main.java:30)
+2024-05-15 16:37:54 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-15 16:37:54 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-15 16:37:54 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-15 16:37:54 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached

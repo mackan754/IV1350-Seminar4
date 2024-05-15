@@ -46,11 +46,7 @@ public class FileLogger implements Logger {
     @Override
     public void error(String message, Exception exception) {
         String timestamp = LocalDateTime.now().format(DATE_TIME_FORMATTER);
-        StringBuilder logMessage = new StringBuilder(String.format("%s [ERROR] %s", timestamp, message));
-        logMessage.append("\n").append(exception.toString());
-        for (StackTraceElement element : exception.getStackTrace()) {
-            logMessage.append("\n\tat ").append(element.toString());
-        }
-        logStream.println(logMessage.toString());
+        String logMessage = String.format("%s [ERROR] %s: %s", timestamp, message, exception.toString());
+        logStream.println(logMessage);
     }
 }
