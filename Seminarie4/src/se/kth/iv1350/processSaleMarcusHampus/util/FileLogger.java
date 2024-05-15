@@ -34,34 +34,11 @@ public class FileLogger implements Logger {
      */
     @Override
     public void log(String message) {
-        log("INFO", message);
+        log(message);
     }
 
     /**
-     * Prints the specified string to the log file with the specified log level.
-     *
-     * @param level   The level of the log message (e.g., INFO, DEBUG, ERROR).
-     * @param message The string that will be printed to the log file.
-     */
-    @Override
-    public void log(String level, String message) {
-        String timestamp = LocalDateTime.now().format(DATE_TIME_FORMATTER);
-        String logMessage = String.format("%s [%s] %s", timestamp, level, message);
-        logStream.println(logMessage);
-    }
-
-    /**
-     * Logs an error message with the ERROR level.
-     *
-     * @param message The error message that will be logged.
-     */
-    @Override
-    public void error(String message) {
-        log("ERROR", message);
-    }
-
-    /**
-     * Logs an error with the ERROR level, including exception details.
+     * Logs an error, including exception details.
      *
      * @param message   The error message that will be logged.
      * @param exception The exception to log.
@@ -75,15 +52,5 @@ public class FileLogger implements Logger {
             logMessage.append("\n\tat ").append(element.toString());
         }
         logStream.println(logMessage.toString());
-    }
-
-    /**
-     * Logs a debug message with the DEBUG level.
-     *
-     * @param message The debug message that will be logged.
-     */
-    @Override
-    public void debug(String message) {
-        log("DEBUG", message);
     }
 }
