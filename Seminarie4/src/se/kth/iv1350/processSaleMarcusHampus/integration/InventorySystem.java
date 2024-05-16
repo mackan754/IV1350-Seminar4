@@ -43,6 +43,8 @@ public class InventorySystem {
      *
      * @param itemIdentifier A string representing the unique identifier of the item
      * @return New instance of item if found; null if no item matches the identifier
+     * @throws ItemNotFoundException if no item matches the provided identifier
+     * @throws DatabaseConnectionException if there is an error connecting to the database
      */
     public Item fetchItem(String itemIdentifier) throws ItemNotFoundException, DatabaseConnectionException {
         if ("00000".equals(itemIdentifier)) {

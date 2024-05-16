@@ -1,6 +1,9 @@
 package se.kth.iv1350.processSaleMarcusHampusTest.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,6 +12,8 @@ import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
+import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
+import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
 
 public class ControllerTest {
 
@@ -16,13 +21,17 @@ public class ControllerTest {
     private AccountingSystem accountingSystem;
     private InventorySystem inventorySystem;
     private Printer printer;
+    private FileLogger logger;
+    private ArrayList<TotalRevenueObserver> revenueObservers;
 
     @BeforeEach
     public void setUp() {
         accountingSystem = new AccountingSystem();
         inventorySystem = new InventorySystem();
         printer = new Printer();
-        controller = new Controller(accountingSystem, inventorySystem, printer);
+        logger = new FileLogger();
+        revenueObservers = new ArrayList<>();
+        controller = new Controller(accountingSystem, inventorySystem, printer, logger, revenueObservers);
     }
 
     @AfterEach
@@ -31,6 +40,8 @@ public class ControllerTest {
         inventorySystem = null;
         printer = null;
         controller = null;
+        logger = null;
+        revenueObservers = null;
     }
 
     @Test
@@ -79,12 +90,33 @@ public class ControllerTest {
     public void testEnterPayment() {
         controller.startNewSale();
 
-        controller.addItem("32001", new Amount(2)); 
+        controller.addItem("32001", new Amount(2));
 
         Amount payment = new Amount(100);
-        Amount expectedChange = payment.minus(new Amount(28)); 
+        Amount expectedChange = payment.minus(new Amount(28));
 
-        assertEquals(expectedChange.toString(), controller.enterPayment(payment), "Returned change does not match the expected change after payment.");
+        assertEquals(expectedChange.toString(), controller.enterPayment(payment),
+                "Returned change does not match the expected change after payment.");
+    }
+
+    @Test
+    public void testAddItemNotFound() {
+        controller.startNewSale();
+        Amount quantity = new Amount(1);
+
+        String result = controller.addItem("invalid", quantity);
+        assertEquals("Item with identifier invalid was not found.", result,
+                "The error message for an item not found does not match.");
+    }
+
+    @Test
+    public void testDatabaseConnectionException() {
+        controller.startNewSale();
+        Amount quantity = new Amount(1);
+
+        String result = controller.addItem("00000", quantity);
+        assertEquals("Database connection failure: The database server could not be reached", result,
+                "The error message for a database connection exception does not match.");
     }
 
 }

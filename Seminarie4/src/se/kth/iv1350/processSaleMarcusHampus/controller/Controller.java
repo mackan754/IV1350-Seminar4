@@ -38,6 +38,8 @@ public class Controller {
      * @param inventorySystem  the inventory system for item data retrieval and
      *                         stock updates
      * @param printer          the printer used for printing receipts
+     * @param logger the logger used for logging error and information messages
+     * @param revenueObservers a list of observers that will be notified of total revenue updates
      */
     public Controller(AccountingSystem accountingSystem, InventorySystem inventorySystem, Printer printer, FileLogger logger,ArrayList<TotalRevenueObserver> revenueObservers) {
         this.accountingSystem = accountingSystem;
@@ -61,7 +63,8 @@ public class Controller {
      * @param itemIdentifier a unique string identifier for the item to be added
      * @param quantity       the quantity of the item, encapsulated in an Amount
      *                       object
-     * @return a string summarizing the added item's details
+     * @return a string summarizing the added item's details or an error message if
+    *           the item is not found or there is a database connection error
      */
     public String addItem(String itemIdentifier, Amount quantity) {
         try {

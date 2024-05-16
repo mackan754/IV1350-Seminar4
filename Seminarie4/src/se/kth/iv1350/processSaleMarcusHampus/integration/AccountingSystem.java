@@ -54,6 +54,11 @@ public class AccountingSystem {
         revenueObservers.add(observer);
     }
 
+    /**
+     * Adds a list of total revenue observers to be notified of revenue updates.
+     *
+     * @param observers a list of observers that will be notified of total revenue updates
+     */
     public void addObservers(ArrayList<TotalRevenueObserver> observers) {
         revenueObservers.addAll(observers);
     }
