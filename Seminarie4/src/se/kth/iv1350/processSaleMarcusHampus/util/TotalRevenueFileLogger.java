@@ -9,11 +9,11 @@ import java.time.format.DateTimeFormatter;
 /**
  * Outputs the total revenue to a file.
  */
-public class TotalRevenueFileOutput implements TotalRevenueObserver {
+public class TotalRevenueFileLogger implements TotalRevenueObserver {
     private PrintWriter logStream;
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    public TotalRevenueFileOutput() {
+    public TotalRevenueFileLogger() {
         try {
             logStream = new PrintWriter(new FileWriter("totalRevenue.txt", true), true);
         } catch (IOException ioe) {

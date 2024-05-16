@@ -6,7 +6,7 @@ import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
 import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
-import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueFileOutput;
+import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueFileLogger;
 import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
 import se.kth.iv1350.processSaleMarcusHampus.view.TotalRevenueView;
 import se.kth.iv1350.processSaleMarcusHampus.view.View;
@@ -31,7 +31,7 @@ public class Main {
 
         ArrayList<TotalRevenueObserver> revenueObservers = new ArrayList<>();
         revenueObservers.add(new TotalRevenueView());
-        revenueObservers.add(new TotalRevenueFileOutput());
+        revenueObservers.add(new TotalRevenueFileLogger());
 
         Controller controller = new Controller(inventorySystem, printer, logger, revenueObservers);
         View view = new View(controller);
