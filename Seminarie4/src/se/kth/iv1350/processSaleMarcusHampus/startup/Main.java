@@ -3,7 +3,6 @@ package se.kth.iv1350.processSaleMarcusHampus.startup;
 import java.util.ArrayList;
 
 import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
-import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
 import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
@@ -26,7 +25,6 @@ public class Main {
      * @param args the command line arguments, not used in this application.
      */
     public static void main(String[] args) {
-        AccountingSystem accountingSystem = new AccountingSystem();
         InventorySystem inventorySystem = new InventorySystem();
         Printer printer = new Printer();
         FileLogger logger = new FileLogger();
@@ -35,7 +33,7 @@ public class Main {
         revenueObservers.add(new TotalRevenueView());
         revenueObservers.add(new TotalRevenueFileOutput());
 
-        Controller controller = new Controller(accountingSystem, inventorySystem, printer, logger, revenueObservers);
+        Controller controller = new Controller(inventorySystem, printer, logger, revenueObservers);
         View view = new View(controller);
         view.fakeSale();
         view.fakeSale();

@@ -12,19 +12,38 @@ import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
  */
 public class AccountingSystem {
 
+    private static AccountingSystem instance;
     private ArrayList<SaleDTO> accountingBook;
     private Amount presentInRegister;
     private Amount totalRevenue;
     private ArrayList<TotalRevenueObserver> revenueObservers;
 
     /**
-     * Constructs a new AccountingSystem with an empty list of saleDTO and initializes the cash register to zero.
+     * Private constructor to prevent instantiation
      */
-    public AccountingSystem() {
+    private AccountingSystem() {
         this.accountingBook = new ArrayList<>();
         this.presentInRegister = new Amount(0);
         this.totalRevenue = new Amount(0);
         this.revenueObservers = new ArrayList<>();
+    }
+
+    /**
+     * Provides the singleton instance of the AccountingSystem.
+     * @return
+     */
+    public static AccountingSystem getInstance() {
+        if (instance == null) {
+            instance = new AccountingSystem();
+        }
+        return instance;
+    }
+
+    /**
+     * Reset the singleton instance of AccountingSystem
+     */
+    public static void resetInstance() {
+        instance = null;
     }
 
     /**

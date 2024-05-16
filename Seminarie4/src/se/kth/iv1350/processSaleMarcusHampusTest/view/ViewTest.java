@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
-import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
 import se.kth.iv1350.processSaleMarcusHampus.util.FileLogger;
@@ -25,7 +24,7 @@ public class ViewTest {
 
     @BeforeEach
     public void setUp() {
-        Controller contr = new Controller(new AccountingSystem(), new InventorySystem(), new Printer(), new FileLogger(), new ArrayList<>());
+        Controller contr = new Controller(new InventorySystem(), new Printer(), new FileLogger(), new ArrayList<>());
         instanceToTest = new View(contr);
 
         printoutBuffer = new ByteArrayOutputStream();
@@ -37,7 +36,6 @@ public class ViewTest {
     @AfterEach
     public void tearDown() {
         instanceToTest = null;
-
         printoutBuffer = null;
         System.setOut(originalSysOut);
     }

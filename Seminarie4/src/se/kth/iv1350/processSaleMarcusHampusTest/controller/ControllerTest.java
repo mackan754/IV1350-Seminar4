@@ -8,7 +8,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
-import se.kth.iv1350.processSaleMarcusHampus.integration.AccountingSystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
@@ -18,7 +17,6 @@ import se.kth.iv1350.processSaleMarcusHampus.util.TotalRevenueObserver;
 public class ControllerTest {
 
     private Controller controller;
-    private AccountingSystem accountingSystem;
     private InventorySystem inventorySystem;
     private Printer printer;
     private FileLogger logger;
@@ -26,17 +24,15 @@ public class ControllerTest {
 
     @BeforeEach
     public void setUp() {
-        accountingSystem = new AccountingSystem();
         inventorySystem = new InventorySystem();
         printer = new Printer();
         logger = new FileLogger();
         revenueObservers = new ArrayList<>();
-        controller = new Controller(accountingSystem, inventorySystem, printer, logger, revenueObservers);
+        controller = new Controller(inventorySystem, printer, logger, revenueObservers);
     }
 
     @AfterEach
     public void tearDown() {
-        accountingSystem = null;
         inventorySystem = null;
         printer = null;
         controller = null;

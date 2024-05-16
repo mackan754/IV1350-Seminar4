@@ -33,16 +33,14 @@ public class Controller {
      * Initializes a new Controller with necessary external systems for accounting,
      * inventory management, and printing.
      * 
-     * @param accountingSystem the accounting system to be used for financial
-     *                         transactions
      * @param inventorySystem  the inventory system for item data retrieval and
      *                         stock updates
      * @param printer          the printer used for printing receipts
      * @param logger the logger used for logging error and information messages
      * @param revenueObservers a list of observers that will be notified of total revenue updates
      */
-    public Controller(AccountingSystem accountingSystem, InventorySystem inventorySystem, Printer printer, FileLogger logger,ArrayList<TotalRevenueObserver> revenueObservers) {
-        this.accountingSystem = accountingSystem;
+    public Controller(InventorySystem inventorySystem, Printer printer, FileLogger logger,ArrayList<TotalRevenueObserver> revenueObservers) {
+        this.accountingSystem = AccountingSystem.getInstance();
         this.inventorySystem = inventorySystem;
         this.printer = printer;
         this.logger = logger;

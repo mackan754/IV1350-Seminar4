@@ -20,7 +20,7 @@ public class AccountingSystemTest {
 
     @Before
     public void setUp() {
-        accountingSystem = new AccountingSystem();
+        accountingSystem = AccountingSystem.getInstance();
         sale = new Sale();
         saleInformation = new SaleDTO(sale);
     }
@@ -30,6 +30,7 @@ public class AccountingSystemTest {
         accountingSystem = null;
         sale = null;
         saleInformation = null;
+        AccountingSystem.resetInstance();
     }
 
     @Test
