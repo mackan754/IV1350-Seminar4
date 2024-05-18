@@ -1,6 +1,9 @@
 package se.kth.iv1350.processSaleMarcusHampus.view;
 
 import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
+import se.kth.iv1350.processSaleMarcusHampus.model.AmountDiscountStrategy;
+import se.kth.iv1350.processSaleMarcusHampus.model.CompositeDiscountStrategy;
+import se.kth.iv1350.processSaleMarcusHampus.model.PercentageDiscountStrategy;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 
 /**
@@ -55,6 +58,17 @@ public class View {
         System.out.println();
         output = contr.displayTotalIncludingTax();
         System.out.println("Total including VAT: " + output);
+
+
+        CompositeDiscountStrategy compositeDiscount = new CompositeDiscountStrategy();
+        compositeDiscount.addStrategy(new PercentageDiscountStrategy(10));
+        compositeDiscount.addStrategy(new AmountDiscountStrategy(new Amount(50)));
+
+        contr.setDiscountStrategies(compositeDiscount);
+
+        System.out.println("Discounts added");
+        output = contr.displayFinalTotal();
+        System.out.println("Final total: " + output);
         System.out.println("Cashier enter amount paid");
         output = contr.enterPayment(new Amount(350));
         System.out.println("Change to give customer: " + output);

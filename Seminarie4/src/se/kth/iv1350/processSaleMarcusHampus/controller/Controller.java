@@ -8,6 +8,7 @@ import se.kth.iv1350.processSaleMarcusHampus.integration.InventorySystem;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
 import se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException;
 import se.kth.iv1350.processSaleMarcusHampus.integration.Printer;
+import se.kth.iv1350.processSaleMarcusHampus.model.CompositeDiscountStrategy;
 import se.kth.iv1350.processSaleMarcusHampus.model.Receipt;
 import se.kth.iv1350.processSaleMarcusHampus.model.Sale;
 import se.kth.iv1350.processSaleMarcusHampus.model.SaleDTO;
@@ -54,6 +55,10 @@ public class Controller {
         this.sale = new Sale();
     }
 
+     public void setDiscountStrategies(CompositeDiscountStrategy discountStrategy) {
+        this.sale.setDiscountStrategy(discountStrategy);
+    }
+
     /**
      * Adds an item to the current sale using an identifier. The quantity of the
      * item is also specified.
@@ -95,6 +100,10 @@ public class Controller {
      */
     public String displayTotalIncludingTax() {
         return sale.getTotalIncludingTax().toString();
+    }
+
+    public String displayFinalTotal() {
+        return sale.getFinalTotal().toString();
     }
 
     /**

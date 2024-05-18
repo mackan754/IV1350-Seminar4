@@ -1,79 +1,12 @@
-2024-05-15 16:37:54 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-15 16:37:54 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-15 16:37:54 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-15 16:37:54 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-15 16:48:32 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-15 16:48:32 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-15 16:48:32 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-15 16:48:32 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-15 19:13:41 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-15 19:13:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-15 19:13:41 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-15 19:13:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:10:21 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 11:10:21 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:10:21 [ERROR] Item not found: invalidItemID: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalidItemID was not found.
-2024-05-16 11:10:21 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 11:10:21 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:10:21 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 11:10:21 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:11:06 [ERROR] Item not found: invalidItemID: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalidItemID was not found.
-2024-05-16 11:12:00 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
-2024-05-16 11:13:36 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:14:00 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:14:23 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 11:14:23 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:14:23 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
-2024-05-16 11:14:23 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:14:23 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 11:14:23 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 11:14:23 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 11:14:23 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:04:51 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:04:51 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:04:51 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:04:51 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:11:41 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:11:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:11:41 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
-2024-05-16 12:11:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:11:41 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:11:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:11:41 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:11:41 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:14:47 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:14:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:14:47 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
-2024-05-16 12:14:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:14:47 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:14:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:14:47 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:14:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:24:55 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:24:55 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:24:55 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
-2024-05-16 12:24:55 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:24:55 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:24:55 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:24:55 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:24:55 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:35:49 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:35:49 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:35:49 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
-2024-05-16 12:35:49 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:35:49 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:35:49 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:35:49 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:35:49 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:43:47 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:43:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:43:47 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
-2024-05-16 12:43:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:43:47 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:43:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 12:43:47 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 12:43:47 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 21:54:51 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 21:54:51 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
-2024-05-16 21:54:51 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
-2024-05-16 21:54:51 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-18 13:21:34 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-18 13:21:34 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-18 13:21:34 [ERROR] Item not found: invalid: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier invalid was not found.
+2024-05-18 13:21:34 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-18 13:21:34 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-18 13:21:34 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-18 13:21:50 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-18 13:21:50 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-18 13:22:32 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-18 13:22:32 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached
+2024-05-18 13:22:32 [ERROR] Item not found: 99999: se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException: Item with identifier 99999 was not found.
+2024-05-18 13:22:32 [ERROR] Failed to connect to database.: se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException: Database connection failure: The database server could not be reached

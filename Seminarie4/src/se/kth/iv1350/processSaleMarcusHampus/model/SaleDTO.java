@@ -16,6 +16,7 @@ public class SaleDTO {
     private ArrayList<Item> items;
     private Amount total;
     private Amount totalIncludingTax;
+    private Amount finalTotal;
     private LocalDateTime saleTime;
 
     /**
@@ -30,6 +31,7 @@ public class SaleDTO {
         }
         this.total = new Amount(sale.getTotal().getAmount());
         this.totalIncludingTax = new Amount(sale.getTotalIncludingTax().getAmount());
+        this.finalTotal = new Amount(sale.getFinalTotal().getAmount());
         this.saleTime = sale.getSaleTime();
     }
 
@@ -58,6 +60,10 @@ public class SaleDTO {
      */
     public Amount getTotalIncludingTax() {
         return totalIncludingTax;
+    }
+
+    public Amount getFinalTotal() {
+        return finalTotal;
     }
 
     /**
@@ -95,6 +101,7 @@ public class SaleDTO {
         }
         sb.append("\ntotal: ").append(total);
         sb.append("\ntax: ").append((totalIncludingTax.minus(total)));
+        sb.append("\nfianl total: ").append(finalTotal);
         return sb.toString();
     }
 }

@@ -8,25 +8,37 @@ import se.kth.iv1350.processSaleMarcusHampus.integration.Item;
 import se.kth.iv1350.processSaleMarcusHampus.util.Amount;
 
 /**
- * Represents a sale transaction, holding details about the items sold, total cost, and time of sale.
- * It allows for adding items to the sale, updating totals, and computing totals including taxes.
+ * Represents a sale transaction, holding details about the items sold, total
+ * cost, and time of sale.
+ * It allows for adding items to the sale, updating totals, and computing totals
+ * including taxes.
  */
 public class Sale {
 
     private ArrayList<Item> items;
     private Amount total;
     private Amount totalIncludingTax;
+    private Amount finalTotal;
     private LocalDateTime saleTime;
+    private DiscountStrategy discountStrategy;
 
     /**
-    * Initializes a new Sale object with empty items and zero total cost (without tax).
-    * Sale time is set to the current time.
-    */
+     * Initializes a new Sale object with empty items and zero total cost (without
+     * tax).
+     * Sale time is set to the current time.
+     */
     public Sale() {
         this.items = new ArrayList<>();
         this.total = new Amount(0);
         this.totalIncludingTax = new Amount(0);
+        this.finalTotal = new Amount(0);
         this.saleTime = LocalDateTime.now();
+        this.discountStrategy = new NoDiscountStrategy();
+    }
+
+    public void setDiscountStrategy(DiscountStrategy discountStrategy) {
+        this.discountStrategy = discountStrategy;
+        updateTotals();
     }
 
     /**
@@ -45,6 +57,10 @@ public class Sale {
      */
     public Amount getTotalIncludingTax() {
         return totalIncludingTax;
+    }
+
+    public Amount getFinalTotal() {
+        return finalTotal;
     }
 
     /**
@@ -76,20 +92,24 @@ public class Sale {
     }
 
     /**
-     * Updates the total and totalIncludingTax properties based on the items in the sale.
+     * Updates the total and totalIncludingTax properties based on the items in the
+     * sale.
      */
     private void updateTotals() {
         total = new Amount(0);
-        totalIncludingTax = new Amount(0);
-        for (Item saleItem : items) {
-            Amount totalPricePerItem = saleItem.getItemInformation().getItemPrice();
-            Amount quantity = saleItem.getQuantity();
-            total = total.plus(totalPricePerItem.multiply(quantity));
+        Amount totalTax = new Amount(0);
 
-            Amount totalPriceIncludingTaxPerItem = totalPricePerItem
-                    .plus(saleItem.getItemInformation().getItemTaxAmount());
-            totalIncludingTax = totalIncludingTax.plus(totalPriceIncludingTaxPerItem.multiply(quantity));
+        for (Item saleItem : items) {
+            Amount pricePerItem = saleItem.getItemInformation().getItemPrice();
+            Amount taxPerItem = saleItem.getItemInformation().getItemTaxAmount();
+            Amount quantity = saleItem.getQuantity();
+
+            total = total.plus(pricePerItem.multiply(quantity));
+            totalTax = totalTax.plus(taxPerItem.multiply(quantity));
         }
+
+        totalIncludingTax = total.plus(totalTax);
+        finalTotal = discountStrategy.calculateDiscount(totalIncludingTax);
     }
 
     /**
@@ -108,7 +128,8 @@ public class Sale {
     }
 
     /**
-     * Adds an item to the sale if it is not already present; increases quantity otherwise.
+     * Adds an item to the sale if it is not already present; increases quantity
+     * otherwise.
      *
      * @param item the item to be added or updated in the sale.
      */
@@ -134,7 +155,7 @@ public class Sale {
      * @return The change to be given to customer, as object Amount
      */
     public Amount completeSale(Amount payment) {
-        Amount change = payment.minus(getTotalIncludingTax());
+        Amount change = payment.minus(getFinalTotal());
         return change;
     }
 }

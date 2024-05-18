@@ -91,7 +91,7 @@ public class AccountingSystem {
     public void updateAccountingSystem(SaleDTO saleInformation, Amount payment) {
         accountingBook.add(saleInformation);
         this.presentInRegister = this.presentInRegister.plus(payment);
-        updateTotalRevenue(saleInformation.getTotal());
+        updateTotalRevenue(saleInformation.getFinalTotal());
     }
 
     /**
