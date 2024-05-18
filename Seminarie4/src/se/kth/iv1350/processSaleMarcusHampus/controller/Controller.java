@@ -55,6 +55,11 @@ public class Controller {
         this.sale = new Sale();
     }
 
+    /**
+     * Sets the discount strategies for the current sale.
+     * 
+     * @param discountStrategy The composite discount strategy to be applied to the sale.
+     */
      public void setDiscountStrategies(CompositeDiscountStrategy discountStrategy) {
         this.sale.setDiscountStrategy(discountStrategy);
     }

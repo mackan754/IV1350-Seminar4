@@ -36,6 +36,11 @@ public class SaleTest {
     }
 
     @Test
+    public void testGetFinalTotal() {
+        assertEquals("Final total should be 0 initially.", 0, sale.getFinalTotal().getAmount(), 0);
+    }
+
+    @Test
     public void testGetItems() {
         ArrayList<Item> items = sale.getItems();
         assertEquals("Item list should be empty initally", 0, items.size());

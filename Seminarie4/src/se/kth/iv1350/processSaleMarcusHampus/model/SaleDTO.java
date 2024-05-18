@@ -101,7 +101,7 @@ public class SaleDTO {
         }
         sb.append("\ntotal: ").append(total);
         sb.append("\ntax: ").append((totalIncludingTax.minus(total)));
-        sb.append("\nfianl total: ").append(finalTotal);
+        sb.append("\nfinal total: ").append(finalTotal);
         return sb.toString();
     }
 }

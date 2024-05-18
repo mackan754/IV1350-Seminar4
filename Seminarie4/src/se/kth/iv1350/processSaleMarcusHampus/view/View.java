@@ -59,14 +59,14 @@ public class View {
         output = contr.displayTotalIncludingTax();
         System.out.println("Total including VAT: " + output);
 
-
         CompositeDiscountStrategy compositeDiscount = new CompositeDiscountStrategy();
         compositeDiscount.addStrategy(new PercentageDiscountStrategy(10));
         compositeDiscount.addStrategy(new AmountDiscountStrategy(new Amount(50)));
 
         contr.setDiscountStrategies(compositeDiscount);
 
-        System.out.println("Discounts added");
+        System.out.println("Discounts added: 10%");
+        System.out.println("Discount added: 50");
         output = contr.displayFinalTotal();
         System.out.println("Final total: " + output);
         System.out.println("Cashier enter amount paid");
