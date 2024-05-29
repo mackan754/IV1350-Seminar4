@@ -1,6 +1,8 @@
 package se.kth.iv1350.processSaleMarcusHampus.view;
 
 import se.kth.iv1350.processSaleMarcusHampus.controller.Controller;
+import se.kth.iv1350.processSaleMarcusHampus.integration.DatabaseConnectionException;
+import se.kth.iv1350.processSaleMarcusHampus.integration.ItemNotFoundException;
 import se.kth.iv1350.processSaleMarcusHampus.model.AmountDiscountStrategy;
 import se.kth.iv1350.processSaleMarcusHampus.model.CompositeDiscountStrategy;
 import se.kth.iv1350.processSaleMarcusHampus.model.PercentageDiscountStrategy;
@@ -32,30 +34,51 @@ public class View {
         contr.startNewSale();
         System.out.println("A new sale has been started.\n");
         System.out.println("Cashier enter items.\n");
-        String output = contr.addItem("32001", new Amount(2));
-        System.out.println(output);
+
+        try {
+            System.out.println(contr.addItem("32001", new Amount(2)));
+        } catch (ItemNotFoundException | DatabaseConnectionException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Running total: " + contr.displayTotal() + "\n");
+
+        try {
+            System.out.println(contr.addItem("32003", new Amount(4)));
+        } catch (ItemNotFoundException | DatabaseConnectionException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Running total: " + contr.displayTotal() + "\n");
+
+        try {
+            System.out.println(contr.addItem("99999", new Amount(1)));
+        } catch (ItemNotFoundException | DatabaseConnectionException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Running total: " + contr.displayTotal() + "\n");
+
+        try {
+            System.out.println(contr.addItem("00000", new Amount(1)));
+        } catch (ItemNotFoundException | DatabaseConnectionException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Running total: " + contr.displayTotal() + "\n");
+
+        try {
+            System.out.println(contr.addItem("32004", new Amount(3)));
+        } catch (ItemNotFoundException | DatabaseConnectionException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Running total: " + contr.displayTotal() + "\n");
+
+        try {
+            System.out.println(contr.addItem("32001", new Amount(2)));
+        } catch (ItemNotFoundException | DatabaseConnectionException e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println("Running total: " + contr.displayTotal());
         System.out.println();
-        output = contr.addItem("32003", new Amount(4));
-        System.out.println(output);
-        System.out.println("Running total: " + contr.displayTotal());
-        System.out.println();
-        output = contr.addItem("99999", new Amount(1));
-        System.out.println(output);
-        System.out.println("Running total: " + contr.displayTotal());
-        System.out.println();
-        output = contr.addItem("00000", new Amount(1));
-        System.out.println(output);
-        System.out.println("Running total: " + contr.displayTotal());
-        System.out.println();
-        output = contr.addItem("32004", new Amount(3));
-        System.out.println(output);
-        System.out.println("Running total: " + contr.displayTotal());
-        System.out.println();
-        output = contr.addItem("32001", new Amount(2));
-        System.out.println(output);
-        System.out.println("Running total: " + contr.displayTotal());
-        System.out.println();
+        String output;
         output = contr.displayTotalIncludingTax();
         System.out.println("Total including VAT: " + output);
 

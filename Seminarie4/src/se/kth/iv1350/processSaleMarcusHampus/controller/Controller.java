@@ -37,10 +37,13 @@ public class Controller {
      * @param inventorySystem  the inventory system for item data retrieval and
      *                         stock updates
      * @param printer          the printer used for printing receipts
-     * @param logger the logger used for logging error and information messages
-     * @param revenueObservers a list of observers that will be notified of total revenue updates
+     * @param logger           the logger used for logging error and information
+     *                         messages
+     * @param revenueObservers a list of observers that will be notified of total
+     *                         revenue updates
      */
-    public Controller(InventorySystem inventorySystem, Printer printer, FileLogger logger,ArrayList<TotalRevenueObserver> revenueObservers) {
+    public Controller(InventorySystem inventorySystem, Printer printer, FileLogger logger,
+            ArrayList<TotalRevenueObserver> revenueObservers) {
         this.accountingSystem = AccountingSystem.getInstance();
         this.inventorySystem = inventorySystem;
         this.printer = printer;
@@ -58,9 +61,10 @@ public class Controller {
     /**
      * Sets the discount strategies for the current sale.
      * 
-     * @param discountStrategy The composite discount strategy to be applied to the sale.
+     * @param discountStrategy The composite discount strategy to be applied to the
+     *                         sale.
      */
-     public void setDiscountStrategies(CompositeDiscountStrategy discountStrategy) {
+    public void setDiscountStrategies(CompositeDiscountStrategy discountStrategy) {
         this.sale.setDiscountStrategy(discountStrategy);
     }
 
@@ -71,10 +75,14 @@ public class Controller {
      * @param itemIdentifier a unique string identifier for the item to be added
      * @param quantity       the quantity of the item, encapsulated in an Amount
      *                       object
-     * @return a string summarizing the added item's details or an error message if
-    *           the item is not found or there is a database connection error
+     * @return a string summarizing the added item's details
+     * @throws ItemNotFoundException       if the item with the specified identifier
+     *                                     is not found
+     * @throws DatabaseConnectionException if there is an error connecting to the
+     *                                     database
      */
-    public String addItem(String itemIdentifier, Amount quantity) {
+    public String addItem(String itemIdentifier, Amount quantity)
+            throws ItemNotFoundException, DatabaseConnectionException {
         try {
             Item itemToBeAdded = inventorySystem.fetchItem(itemIdentifier);
             sale.addItem(itemToBeAdded, quantity);
@@ -82,10 +90,10 @@ public class Controller {
             return itemDetails;
         } catch (ItemNotFoundException e) {
             logger.error("Item not found: " + itemIdentifier, e);
-            return e.getMessage();
+            throw new ItemNotFoundException(itemIdentifier);
         } catch (DatabaseConnectionException e) {
             logger.error("Failed to connect to database.", e);
-            return e.getMessage();
+            throw new DatabaseConnectionException("Failed to connect to database.");
         }
     }
 
